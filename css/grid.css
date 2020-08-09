@@ -25,11 +25,14 @@ ul{
 
 .container{
     margin: 1em;
+    text-align: center;
 }
 
 .grid ul{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    
 }
 
 .grid ul li{

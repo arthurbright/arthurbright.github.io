@@ -16,27 +16,16 @@
             <h1>Grid Test</h1>
         </header>
 
-        <div class="grid">
-            <ul>
-                <li class="green box">hi</li>
-                <li class="green box">hi</li>
-                <li class="green box">hi</li>
-                <li class="green box">hi</li>
+        <div class="grid" id = "grid">
+            <ul id= "gridlist">
+                <!--nothing yet, but script will add boxes-->
             </ul>
         </div>
+
+        <p id="sum">Sum: 0</p>
     </div>
 
-    <script>
-        document.querySelectorAll(".box").forEach(box =>{
-            box.addEventListener('click', function(e){
-                box.classList.toggle('green');
-                box.classList.toggle('red');
-            e.preventDefault();
-            })
-        });
-        
-        
-        
-    </script>
+    <script src="scripts/generateboxes.js"></script>
+    
 </body>
 </html>
