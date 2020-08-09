@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="icon" href="images/user2.png">
+</head>
+
+
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Grid Test</h1>
+        </header>
+
+        <div class="grid">
+            <ul>
+                <li class="green box">hi</li>
+                <li class="green box">hi</li>
+                <li class="green box">hi</li>
+                <li class="green box">hi</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".box").forEach(box =>{
+            box.addEventListener('click', function(e){
+                box.classList.toggle('green');
+                box.classList.toggle('red');
+            e.preventDefault();
+            })
+        });
+        
+        
+        
+    </script>
+</body>
+</html>
