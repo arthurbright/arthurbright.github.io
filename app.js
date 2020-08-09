@@ -10,7 +10,7 @@ app.get('/', async (req, res) =>{
 
 app.get('/grid', async (req, res) =>{
     
-    res.send(await fs.readFile('./grid.html', 'utf8'));
+    res.send(await fs.readFile('./index.html', 'utf8'));
     
     
 });
