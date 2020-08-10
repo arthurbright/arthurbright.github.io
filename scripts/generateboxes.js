@@ -30,3 +30,12 @@ function updateSum(){
     }
     document.getElementById("sum").textContent = "Sum: " + s;
 }
+
+const express = require('express');
+const app = express();
+
+app.get('/gay', (req, res)=>{
+    res.send('hi');
+});
+
+app.listen(3000);
