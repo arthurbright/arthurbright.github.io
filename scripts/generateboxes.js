@@ -38,4 +38,4 @@ app.get('/gay', (req, res)=>{
     res.send('hi');
 });
 
-app.listen(3000);
+app.listen(3000, 'arthurbright.github.io');
