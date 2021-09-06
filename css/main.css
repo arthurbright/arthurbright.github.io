@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300&display=swap);
 
+
+
 .logo{
     width: 50px;
     height: 50px;
@@ -8,6 +10,9 @@
 body{
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 300;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: rgba(19, 36, 45);
 }
 
 header{
@@ -19,8 +24,9 @@ header{
 
     width: 100%;
     align-items: center;
-    height: 35px;
-    background-color: #13242D
+    height: 33px;
+    background-color: rgba(19, 36, 45, 0.85);
+    z-index: 10;
 }
 
 header h1{
@@ -45,6 +51,34 @@ header ul{
     position: fixed;
     right: 30px;
 }
+
+.piccontainer{
+    height: 600px;
+    overflow: hidden;
+}
+
+.backgroundPic{
+    width: 115%;
+    position: relative;
+    opacity: 0.3
+    
+}
+
+.title1{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%
+}
+
+h2{
+    color: white;
+    font-size: 70px;
+    font-weight: 100;
+    text-align: center;
+}
+
 
 
 
