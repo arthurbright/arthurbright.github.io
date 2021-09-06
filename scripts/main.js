@@ -1,6 +1,8 @@
 const headerTitle = document.getElementById("headerTitle");
 const backgroundPic = document.getElementById("backgroundPic");
 const title1 = document.getElementById("title1");
+const icon = document.getElementById("logo")
+const arrow = document.getElementById("arrow");
 
 
 const titleY = title1.offsetTop;
@@ -8,7 +10,15 @@ const titleY = title1.offsetTop;
 
 
 headerTitle.addEventListener('click', (e)=>{
-    window.location.href="./#"
+    window.location.href="index"
+})
+
+icon.addEventListener('click', (e)=>{
+    window.location.href = "index"
+})
+
+arrow.addEventListener('click', (e)=>{
+    window.location.href = "#aboutme"
 })
 
 window.onmousemove = (e)=>{
@@ -32,5 +42,4 @@ window.onmousemove = (e)=>{
     //offset position so still near center
     title1.style.left = (x2 + width/2) + "px";
     title1.style.top = (y2 + titleY) + "px";
-    console.log(x2);
  }
