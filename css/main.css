@@ -107,7 +107,7 @@ header ul{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    animation: blinka 0.8s infinite alternate;
+    animation: blinka 0.65s infinite alternate;
 }
 
 @keyframes blinka{
@@ -130,12 +130,14 @@ header ul{
     font-weight: 100;
     font-size: 50px;
     margin: 0px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .bigportrait{
-    width: 30%
+    width: 30%;
+    padding-right: 30px;
+    padding-bottom: 100px;
 }
 
 .aboutMeContent{
@@ -143,8 +145,16 @@ header ul{
     justify-content: center
 }
 
-.section1 p{
-    width: 30%
+.section1right {
+    width: 40%
+}
+
+.section1right img{
+    width: 20%;
+}
+
+.section1right p{
+    font-size: 1.5vw;
 }
 
 
