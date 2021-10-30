@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap);
 
 html{
     scroll-behavior: smooth;
@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
     margin: 0;
@@ -30,13 +30,13 @@ header{
     background-color: rgba(19, 36, 45, 0.80);
     z-index: 10;
 
+    
     animation-name: fadeIn;
     animation-duration: 3s;
 }
 
 @keyframes fadeIn{
     0% {opacity: 0};
-    60% {opacity: 0};
     100% {opacity: 1}
 }
 
@@ -73,6 +73,8 @@ header ul{
     position: relative;
     opacity: 0.3;
     filter: brightness(0.5);
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
 
 .title1{
@@ -88,8 +90,9 @@ header ul{
     font-size: 80px;
     font-weight: 100;
     text-align: center;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
+
 
 .piccontainer h3{
     color: white;
@@ -98,6 +101,8 @@ header ul{
     text-align: center;
     margin: 0px;
     margin-bottom: 20px;
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
 
 .arrow{
@@ -108,6 +113,8 @@ header ul{
     margin-left: auto;
     margin-right: auto;
     animation: blinka 0.65s infinite alternate;
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
 
 @keyframes blinka{
@@ -120,6 +127,10 @@ header ul{
     color: rgba(19, 36, 45);
     text-align: center;
     transform: skewY(2.5deg) translateY(-8%);
+    
+    overflow: hidden;
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
 
 .section1Inner{
@@ -127,36 +138,91 @@ header ul{
 }
 
 .section1 h2{
-    font-weight: 100;
+    font-weight: 200;
     font-size: 50px;
     margin: 0px;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .bigportrait{
     width: 30%;
-    padding-right: 30px;
-    padding-bottom: 100px;
+    bottom: -4em;
+    position: relative;
+    object-fit: contain;
 }
 
 .aboutMeContent{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    padding-top: 0px;
 }
 
 .section1right {
-    width: 40%
+    width: 50%;
+    padding-bottom: 50px;
 }
 
 .section1right img{
-    width: 20%;
+    width: 10%;
+    padding-top: 30px;
 }
 
 .section1right p{
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
+
+
+
+
+.section2 {
+    padding-top: 10px;
+    color: white;
+}
+
+.section2 h2{
+    font-weight: 200;
+    font-size: 50px;
+    margin: 0px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.s2segment{
+    display: flex;
+    justify-content: left;
+    padding-top: 0px;
+    padding-bottom: 60px;
+}
+
+.s2segment p{
+    font-size: 1.4vw;
+    padding-right: 15%
+}
+
+.s2segment img{
+    width: 40%;
+    padding-left: 8%;
+    padding-right: 5%;
+}
+
+.s2segment h3{
+    font-size: 2.1em;
+    margin-bottom: 0;
+}
+
+.gitlogo {
+    padding-right: 15%;
+    width: 10px;
+    margin: 0 auto;
+    
+}
+
+.s2col img{
+    width: 30px;
+    padding: 0;
+}
 
 
 
