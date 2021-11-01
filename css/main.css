@@ -228,15 +228,24 @@ header ul{
 
 .section3 {
     background-color: white;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    height: 200px;
+    height: 80px;
 }
 
 .section3inner {
     padding-top: 20px;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.section3inner img {
+    width: 34px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.section3inner a {
+
 }
 
 
