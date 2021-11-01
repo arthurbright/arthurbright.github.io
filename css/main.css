@@ -226,4 +226,19 @@ header ul{
 
 
 
+.section3 {
+    background-color: white;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    height: 200px;
+}
+
+.section3inner {
+    padding-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
 
