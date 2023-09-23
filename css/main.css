@@ -1,258 +1,73 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap);
-
-html{
-    scroll-behavior: smooth;
-}
-
-.logo{
-    width: 50px;
-    height: 50px;
-}
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap);
 
 body{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
+    font-family: 'Ubuntu Mono';
     margin: 0;
-    background-color: rgba(19, 36, 45);
+    font-size: 15;
 }
 
-header{
-    display: flex;
-    padding: 1.6em;
-    position: fixed;
-    top: 0;
-    left: 0;
+.container{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 
+.consolebox{
+    width: min(100vw, 850px);
+    height: min(100vh, 450px);
+
+    background-color: black;
+    color: white;
+    overflow: auto;
+    padding: 3px;
+}
+.consolebox::selection { background:white; color:black; }
+
+
+.fixedtext{
+    line-height: 18px;
     width: 100%;
-    align-items: center;
-    height: 30px;
-    background-color: rgba(19, 36, 45, 0.80);
-    z-index: 10;
+    word-break: break-all
+}
+.fixedtext::selection { background:white; color:black; }
 
-    
-    animation-name: fadeIn;
-    animation-duration: 3s;
+.lastline{
+    line-height: 18px;
+    display: flex
 }
 
-@keyframes fadeIn{
-    0% {opacity: 0};
-    100% {opacity: 1}
+.prefix{
+    white-space: nowrap;
+    width: fit-content;
 }
+.prefix::selection { background:white; color:black; }
 
-header h1{
-    font-weight: 200;
-    font-size: 28px;
-    margin-left: 20px;
-    color: white
-}
-
-.nav li{
-    display: inline;
-    font-size: 19px;
-    padding-left: 20px;
-}
-
-.nav a{
-    text-decoration: none;
-    color: white
-}
-
-header ul{
-    position: fixed;
-    right: 30px;
-}
-
-.piccontainer{
-    height: 675px;
-    overflow: hidden;
-}
-
-.backgroundPic{
-    width: 120%;
-    position: relative;
-    opacity: 0.3;
-    filter: brightness(0.5);
-    animation-name: fadeIn;
-    animation-duration: 3s;
-}
-
-.title1{
-    position: absolute;
-    top: 270px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+textarea{
+    font-size: 15;
+    font-family: 'Ubuntu Mono';
+    background: black;
+    color: white;
     width: 100%;
-}
-
-.piccontainer h2{
-    color: white;
-    font-size: 80px;
-    font-weight: 100;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-
-.piccontainer h3{
-    color: white;
-    font-size: 50px;
-    font-weight: 300;
-    text-align: center;
-    margin: 0px;
-    margin-bottom: 20px;
-    animation-name: fadeIn;
-    animation-duration: 3s;
-}
-
-.arrow{
-    filter: invert(1);
-    text-align: center;
-    width: 60px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    animation: blinka 0.65s infinite alternate;
-    animation-name: fadeIn;
-    animation-duration: 3s;
-}
-
-@keyframes blinka{
-    0% {opacity: 0};
-    100% {opacity: 1};
-}
-
-.section1{
-    background-color: white;
-    color: rgba(19, 36, 45);
-    text-align: center;
-    transform: skewY(2.5deg) translateY(-8%);
-    
-    overflow: hidden;
-    animation-name: fadeIn;
-    animation-duration: 3s;
-}
-
-.section1Inner{
-    transform: skewY(-2.5deg);
-}
-
-.section1 h2{
-    font-weight: 200;
-    font-size: 50px;
-    margin: 0px;
-    padding-top: 60px;
-    padding-bottom: 30px;
-}
-
-.bigportrait{
-    width: 30%;
-    bottom: -4em;
-    position: relative;
-    object-fit: contain;
-}
-
-.aboutMeContent{
-    display: flex;
-    justify-content: center;
+    height: 100%;
+    resize: none;
+    border: none;
     padding-top: 0px;
+    padding-left: 0;
+    word-break: break-all;
+    line-height: 18px;
 }
+textarea::selection { background:white; color:black; }
+textarea:focus { outline: none !important; }
 
-.section1right {
-    width: 50%;
-    padding-bottom: 50px;
+
+.green{
+    color: lime
 }
-
-.section1right img{
-    width: 10%;
-    padding-top: 30px;
-}
-
-.section1right p{
-    font-size: 1.4vw;
-}
-
-
-
-
-
-.section2 {
-    padding-top: 10px;
-    color: white;
-}
-
-.section2 h2{
-    font-weight: 200;
-    font-size: 50px;
-    margin: 0px;
-    text-align: center;
-    padding-bottom: 50px;
-}
-
-.s2segment{
-    display: flex;
-    justify-content: left;
-    padding-top: 0px;
-    padding-bottom: 60px;
-}
-
-.s2segment p{
-    font-size: 1.4vw;
-    padding-right: 15%
-}
-
-.s2segment img{
-    width: 40%;
-    padding-left: 8%;
-    padding-right: 5%;
-}
-
-.s2segment h3{
-    font-size: 2.1em;
-    margin-bottom: 0;
-}
-
-.gitlogo {
-    padding-right: 15%;
-    width: 10px;
-    margin: 0 auto;
-    
-}
-
-.s2col img{
-    width: 30px;
-    padding: 0;
-}
-
-
-
-.section3 {
-    background-color: white;
-    height: 80px;
-}
-
-.section3inner {
-    padding-top: 20px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.section3inner img {
-    width: 34px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.section3inner a {
-
-}
-
-.darklink{
+.blue{
     color: cyan
 }
-
-
-
-
-
+.red{
+    color: red
+}
