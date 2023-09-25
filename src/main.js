@@ -203,7 +203,7 @@ var experience = new Folder("experience"); root.addFolder(experience);
 root.addFile(new File("RESUME", ""));
 
 var secret = new Folder("secret"); root.addFolder(secret);
-for(let i = 2; i < 6; i ++){
+for(let i = 2; i < 4; i ++){
     let s = new Folder("secret" + i.toString());
     secret.addFolder(s);
     secret = s;
