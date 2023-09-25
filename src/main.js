@@ -208,7 +208,7 @@ for(let i = 2; i < 6; i ++){
     secret.addFolder(s);
     secret = s;
 }
-secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES"));
+secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Also, type 'cats' to see my cats, Lulu and Percy :3"));
 
 
 
