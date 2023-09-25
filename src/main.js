@@ -208,7 +208,7 @@ for(let i = 2; i < 4; i ++){
     secret.addFolder(s);
     secret = s;
 }
-secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Also, type 'cats' to see my cats, Lulu and Percy :3"));
+secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Also, type 'cats' to see a random picture of my cats, Lulu and Percy :3"));
 
 
 
@@ -243,7 +243,7 @@ async function startup(){
     setHeader();
     await new Promise(r => setTimeout(r, 100));
     append("<span class='yellow'> Starting up... <\span><br><br>");
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 800));
     s = 
     "░█████╗░██████╗░████████╗██╗░░██╗██╗░░░██╗██████╗=" + 
     "██╔══██╗██╔══██╗╚══██╔══╝██║░░██║██║░░░██║██╔══██╗=" + 
@@ -258,11 +258,19 @@ async function startup(){
         "██████╦╝██║░░██║██║╚██████╔╝██║░░██║░░░██║░░░=" + 
         "╚═════╝░╚═╝░░╚═╝╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░=";
 
+    if(window.innerWidth < 550){
+        s = 
+        "▄▀█ █▀█ ▀█▀ █░█ █░█ █▀█=" + 
+        "█▀█ █▀▄ ░█░ █▀█ █▄█ █▀▄==" + 
+        "█▄▄ █▀█ █ █▀▀ █░█ ▀█▀=" + 
+        "█▄█ █▀▄ █ █▄█ █▀█ ░█░==";
+    }
+
     await slowText(s);
 
     await new Promise(r => setTimeout(r, 100));
-    append("<span class='yellow'>Enter 'help' for ... help.<br><br>");
-    await new Promise(r => setTimeout(r, 300));
+    append("<span class='yellow'>Type 'help' to see a list of commands<br><br>");
+    await new Promise(r => setTimeout(r, 500));
 
     ready = true;
     prefix.innerHTML = getPrefix();
@@ -291,7 +299,7 @@ function processCommand(str){
             else error(arr[1] + ": Not a directory >:(");
         }
         else{
-            error('Usage: ls [folder path]');
+            error('Usage: ls [directory]');
         }
     }
     else if(arr[0] == "cd"){
@@ -325,10 +333,10 @@ function processCommand(str){
     }
     else if(arr[0] == "help"){
         var s = "This website is based on the linux terminal. There are four simple commands:<br>" +
-        "&nbsp;&nbsp;cat &lt;file-path&gt;: view the contents of a file.<br>" + 
-        "&nbsp;&nbsp;cd &lt;directory&gt;: change the current directory.<br>" + 
+        "&nbsp;&nbsp;cat &lt;file-path&gt;: View the contents of a file.<br>" + 
+        "&nbsp;&nbsp;cd &lt;directory&gt;: Change the current directory.<br>" + 
         "&nbsp;&nbsp;help: Display information about commands.<br>" + 
-        "&nbsp;&nbsp;ls [directory]: list the contents of a directory, or the current directory if no argument is provided.<br><br>" + 
+        "&nbsp;&nbsp;ls [directory]: List the contents of a directory, or the current directory if no argument is provided.<br><br>" + 
         "You can also use the up/down arrow keys to autofill previous commands. <br>";
         append("<span class='yellow'>" + s + "<br> <\span>");
     }
