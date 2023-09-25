@@ -319,6 +319,10 @@ function processCommand(str){
             error('Usage: cat &lt;file-path&gt;');
         }
     }
+    else if(arr[0] == "cats"){
+        let r = Math.floor(Math.random() * 11);
+        window.open("images/cats" + r + ".jpg", '_blank');
+    }
     else if(arr[0] == "help"){
         var s = "This website is based on the linux terminal. There are four simple commands:<br>" +
         "&nbsp;&nbsp;cat &lt;file-path&gt;: view the contents of a file.<br>" + 
