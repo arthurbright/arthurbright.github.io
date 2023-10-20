@@ -203,12 +203,12 @@ var experience = new Folder("experience"); root.addFolder(experience);
 root.addFile(new File("RESUME", ""));
 
 var secret = new Folder("secret"); root.addFolder(secret);
-for(let i = 2; i < 4; i ++){
+for(let i = 2; i < 2; i ++){
     let s = new Folder("secret" + i.toString());
     secret.addFolder(s);
     secret = s;
 }
-secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Also, type 'cats' to see a random picture of my cats, Lulu and Percy :3"));
+secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Type 'piano' to play a piano.<br>Also, type 'cats' to see a random picture of my cats, Lulu and Percy :3"));
 
 
 
@@ -330,6 +330,10 @@ function processCommand(str){
     else if(arr[0] == "cats"){
         let r = Math.floor(Math.random() * 11);
         window.open("images/cats" + r + ".jpg", '_blank');
+    }
+    else if(arr[0] == "piano"){
+        let r = Math.floor(Math.random() * 11);
+        window.open("piano/room.html", '_blank');
     }
     else if(arr[0] == "help"){
         var s = "This website is based on the linux terminal. There are four simple commands:<br>" +
