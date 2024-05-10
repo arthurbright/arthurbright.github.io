@@ -134,6 +134,7 @@ const UP = 38;
 const DOWN = 40;
 
 var ready = false;
+var skipped = false;
 var root = new Folder("home");
 root.parent = root;
 var curFolder = root;
@@ -226,12 +227,16 @@ function setHeader(){
     header.innerHTML = 'a2bright@my-website:&nbsp;' + curFolder.path + ''
 }
 
+function animationTimeout(r, duration){
+    setTimeout(r, duration);
+}
+
 async function slowText(str){
     const mod = 4;
     let cnt = 0;
     for(c of str){
-        if(cnt == mod - 1){
-            await new Promise(r => setTimeout(r, 1));
+        if(cnt == mod - 1 && !skipped){
+            await new Promise(r => animationTimeout(r, 1));
         }
         if(c == "=") append("<br>");
         else append(c);
@@ -241,9 +246,12 @@ async function slowText(str){
 
 async function startup(){
     setHeader();
-    await new Promise(r => setTimeout(r, 100));
+    if(!skipped) await new Promise(r => animationTimeout(r, 100));
     append("<span class='yellow'> Starting up... <\span><br><br>");
-    await new Promise(r => setTimeout(r, 800));
+    //break up long animation for skipability
+    for(let i = 0; i < 16; i ++){
+        if(!skipped) await new Promise(r => animationTimeout(r, 50));
+    }
     s = 
     "░█████╗░██████╗░████████╗██╗░░██╗██╗░░░██╗██████╗=" + 
     "██╔══██╗██╔══██╗╚══██╔══╝██║░░██║██║░░░██║██╔══██╗=" + 
@@ -268,9 +276,11 @@ async function startup(){
 
     await slowText(s);
 
-    await new Promise(r => setTimeout(r, 100));
+    if(!skipped) await new Promise(r => animationTimeout(r, 100));
     append("<span class='yellow'>Type 'help' to see a list of commands<br><br>");
-    await new Promise(r => setTimeout(r, 500));
+    for(let i = 0; i < 5; i ++){
+        if(!skipped) await new Promise(r => animationTimeout(r, 100));
+    }
 
     ready = true;
     prefix.innerHTML = getPrefix();
@@ -351,11 +361,18 @@ function processCommand(str){
 }
 
 cons.onkeydown = e => {
+    //skipping the intro animation
+    if(!ready && !skipped && e.keyCode && e.keyCode == ENTER){
+        e.preventDefault();
+        skipped = true;
+        cons.innerHTML = ""
+        return;
+    }
+
     if(!ready){
         e.preventDefault();
         return;
     }
-
 
     if ((e.keyCode && e.keyCode == ENTER) || (e.charCode && e.charCode == ENTER)){
         processCommand(cons.value);
