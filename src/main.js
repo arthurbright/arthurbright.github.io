@@ -62,7 +62,7 @@ class File{
     }
 
     getContent(){
-        if(this.name == "RESUME"){
+        if(this.name == "resume"){
             window.open("Arthur-Bright-Resume.pdf", '_blank');
             return undefined;
         }
@@ -132,6 +132,7 @@ const header = document.getElementById("header");
 const ENTER = 13;
 const UP = 38;
 const DOWN = 40;
+const TAB = 9;
 
 var ready = false;
 var skipped = false;
@@ -141,6 +142,8 @@ var curFolder = root;
 const previousCommands = [""];
 var commandIndex = 0;
 
+
+//directory structure
 var about = new Folder("about"); root.addFolder(about);
     about.addFile(new File("bio", "Hi, my name is Arthur Bright! I'm a third year Computer Science Student at University of Waterloo.<br>" + 
     "I love making music and singing in the shower. I'm also into anything math (especially competitions :D)."));
@@ -201,7 +204,7 @@ var experience = new Folder("experience"); root.addFolder(experience);
         "Imagine Communications: Backend Developer || May 2022 - Aug 2022<br>" + 
         "- Developed a robust HTTP client in .NET for communicating with Amazon S3 cloud storage<br>" + 
         "- Optimized PostgreSQL connections by strategically pruning idle connections, improving performance tenfold"));
-root.addFile(new File("RESUME", ""));
+root.addFile(new File("resume", ""));
 
 var secret = new Folder("secret"); root.addFolder(secret);
 for(let i = 2; i < 2; i ++){
@@ -231,6 +234,8 @@ function animationTimeout(r, duration){
     setTimeout(r, duration);
 }
 
+
+//print big name for startup sequence
 async function slowText(str){
     const mod = 4;
     let cnt = 0;
@@ -244,6 +249,8 @@ async function slowText(str){
     }
 }
 
+
+//startup sequence
 async function startup(){
     setHeader();
     if(!skipped) await new Promise(r => animationTimeout(r, 100));
@@ -287,10 +294,14 @@ async function startup(){
 }
 startup()
 
+
+//print an error to console
 function error(str){
     append("<span class='red'>" + str + "<\span><br>");
 }
 
+
+//process a command (when user presses enter)
 function processCommand(str){
     previousCommands.splice(previousCommands.length - 1, 0, str);
     commandIndex = 0;
@@ -306,7 +317,7 @@ function processCommand(str){
         else if(arr.length == 2){
             folder = getFolder(arr[1]);
             if(folder) append(folder.toString() + "<br>");
-            else error(arr[1] + ": Not a directory >:(");
+            else error(arr[1] + ": Not a directory " + randomEmoji());
         }
         else{
             error('Usage: ls [directory]');
@@ -316,12 +327,12 @@ function processCommand(str){
         if(arr.length == 2){
             folder = getFolder(arr[1]);
             if(folder) curFolder = folder;
-            else error(arr[1] + ": Not a directory >:("); 
+            else error(arr[1] + ": Not a directory " + randomEmoji()); 
             prefix.innerHTML = getPrefix();
             setHeader();
         }
         else{
-            error('Usage: cd &lt;director&gt;');
+            error('Usage: cd &lt;directory&gt;');
         }
     }
     else if(arr[0] == "cat"){
@@ -331,7 +342,7 @@ function processCommand(str){
                 let s = file.getContent();
                 if(s) append("<span class='yellow'>" + file.getContent() + "<br> <\span>");
             }
-            else error(arr[1] + ": Not a file >:(");
+            else error(arr[1] + ": Not a file " + randomEmoji());
         }
         else{
             error('Usage: cat &lt;file-path&gt;');
@@ -355,12 +366,90 @@ function processCommand(str){
         append("<span class='yellow'>" + s + "<br> <\span>");
     }
     else{
-        error(str + ": Unrecognized command! :(");
+        error(str + ": Unrecognized command! " + randomEmoji());
     }
 
 }
 
+
+let cachedOptions = undefined;
+let autofillIndex = 0;
+let cachedPrefix = undefined;
+function autofill(){
+    const str = cons.value;
+    const words = str.split(' ');
+
+    let numPrevWords = 0;
+    for(let i = 0; i < words.length - 1; i ++){
+        if(words[i] != '') numPrevWords ++;
+    }
+    const lastWord = words[words.length - 1];
+    
+    let options = []
+    if(numPrevWords == 0 && lastWord.indexOf('/') == -1 && lastWord.indexOf('\\') == -1){
+        //autofill cmds as well
+        options = ['cat', 'cd', 'help', 'ls'];
+    }
+
+    dstr = lastWord;
+    if(dstr.startsWith("/") || dstr.startsWith("\\")){
+        dstr = "home" + dstr;
+    }
+    else{
+        dstr = curFolder.path + "/" + dstr;
+    }
+    //take out the "home" prefix
+    dstr = dstr.substr(4);
+
+    let s = Math.max(dstr.lastIndexOf("/"), dstr.lastIndexOf("\\"));
+    let pre = dstr.substring(0, s + 1);
+    let suf = dstr.substring(s + 1);
+    let ogpre = lastWord.substring(0, Math.max(lastWord.lastIndexOf("/"), lastWord.lastIndexOf("\\")) + 1);
+
+    //populate autofill options
+    dir = getFolder(pre, false);
+    if(dir == undefined) return;
+    for(let sub of dir.subfolders){
+        options.push(sub.name + "/");
+    }
+    for(let file of dir.files){
+        options.push(file.name)
+    }
+
+    
+    options = options.filter((w) => w.startsWith(suf));
+    options.sort();
+    if(options.length == 0){
+        return; //do nothing
+    }
+
+    if(cachedOptions == undefined){
+        cachedOptions = options;
+        autofillIndex = 0;
+        cachedPrefix = ogpre;
+    }
+    else{
+        autofillIndex = (autofillIndex + 1) % cachedOptions.length
+    }
+
+    words[words.length - 1] = cachedPrefix + cachedOptions[autofillIndex];
+    cons.value = words.join(' ');
+
+    if(cachedOptions.length <= 1){
+        clearAutofillCache();
+    }
+}
+
+function clearAutofillCache(){
+    cachedOptions = undefined;
+}
+
+//input handlers
 cons.onkeydown = e => {
+    if (!((e.keyCode && e.keyCode == TAB) || (e.charCode && e.charCode == TAB))){
+        clearAutofillCache();
+    }
+
     //skipping the intro animation
     if(!ready && !skipped && e.keyCode && e.keyCode == ENTER){
         e.preventDefault();
@@ -414,5 +503,15 @@ cons.onkeydown = e => {
         }
         e.preventDefault();
     }
+    else if ((e.keyCode && e.keyCode == TAB) || (e.charCode && e.charCode == TAB)){
+        e.preventDefault();
+        autofill();
+    }
 };
+
+
+const emojis = [":(", ">:(", ";(", ">;(", "D:", "( ͡° ͜ʖ ͡°)"]
+function randomEmoji(){
+    return emojis[Math.floor(Math.random() * emojis.length)];
+}
 
