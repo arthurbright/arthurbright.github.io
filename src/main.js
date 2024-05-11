@@ -142,6 +142,14 @@ var curFolder = root;
 const previousCommands = [""];
 var commandIndex = 0;
 
+const shortcuts = {
+    'piano': "piano/room.html",
+    'resume': "Arthur-Bright-Resume.pdf",
+    'github': "https://github.com/arthurbright",
+    'linkedin': "https://www.linkedin.com/in/a2bright/",
+    'ig': "https://www.instagram.com/artb_64/"
+}
+
 
 //directory structure
 var about = new Folder("about"); root.addFolder(about);
@@ -301,6 +309,7 @@ function error(str){
 }
 
 
+
 //process a command (when user presses enter)
 function processCommand(str){
     previousCommands.splice(previousCommands.length - 1, 0, str);
@@ -352,18 +361,18 @@ function processCommand(str){
         let r = Math.floor(Math.random() * 11);
         window.open("images/cats" + r + ".jpg", '_blank');
     }
-    else if(arr[0] == "piano"){
-        let r = Math.floor(Math.random() * 11);
-        window.open("piano/room.html", '_blank');
-    }
     else if(arr[0] == "help"){
         var s = "This website is based on the linux terminal. There are four simple commands:<br>" +
         "&nbsp;&nbsp;cat &lt;file-path&gt;: View the contents of a file.<br>" + 
         "&nbsp;&nbsp;cd &lt;directory&gt;: Change the current directory.<br>" + 
         "&nbsp;&nbsp;help: Display information about commands.<br>" + 
         "&nbsp;&nbsp;ls [directory]: List the contents of a directory, or the current directory if no argument is provided.<br><br>" + 
-        "You can also use the up/down arrow keys to autofill previous commands. <br>";
+        "You can also use Tab to autofill and the up/down arrow keys to view previous commands. <br>" + 
+        "Shortcut commands: resume, github, ig, linkedin, piano. <br>";
         append("<span class='yellow'>" + s + "<br> <\span>");
+    }
+    else if(arr[0] in shortcuts){
+        window.open(shortcuts[arr[0]], '_blank');
     }
     else{
         error(str + ": Unrecognized command! " + randomEmoji());
@@ -389,6 +398,9 @@ function autofill(){
     if(numPrevWords == 0 && lastWord.indexOf('/') == -1 && lastWord.indexOf('\\') == -1){
         //autofill cmds as well
         options = ['cat', 'cd', 'help', 'ls'];
+        for(let k in shortcuts){
+            options.push(k)
+        }
     }
 
     dstr = lastWord;
@@ -416,7 +428,7 @@ function autofill(){
         options.push(file.name)
     }
 
-    
+    options = [...new Set(options)]; //remove duplicates
     options = options.filter((w) => w.startsWith(suf));
     options.sort();
     if(options.length == 0){
