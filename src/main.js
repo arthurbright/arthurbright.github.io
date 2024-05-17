@@ -199,10 +199,15 @@ var projects = new Folder("projects"); root.addFolder(projects);
     projects.addFile(new File("portal2d", "A 2D version of the popular game Portal. Comes with 15 challenging levels. Built with Unity.<br>" + 
         "Game files: <a href=https://github.com/arthurbright/Portal2D target=_blank>https://github.com/arthurbright/Portal2D<\a>"));
 var experience = new Folder("experience"); root.addFolder(experience);
+    experience.addFile(new File("2024-janestreet", 
+        "Jane Street: Software Engineer || May 2024 - Aug 2024<br>" + 
+        "- Find out soon!"));
     experience.addFile(new File("2023-bloomberg", 
-        "Bloomberg LP: Software Engineer || Aug 2023 - Dec 2023<br>" + 
+        "Bloomberg LP: Software Engineer || Aug 2023 - Dec 2023<br>" +
+        "Team: Entity Classification and Relationships<br>"  + 
         "- Researched semantic graph storage and pathfinding performance<br>" + 
-        "- Developed service to cache and retrive ontology graph paths, greatly improving response time."));
+        "- Developed service to cache and retrive ontology graph paths, greatly improving response time <br>" + 
+        "- Developed pipeline to automatically recompute caches upon graph changes"));
     experience.addFile(new File("2023-questrade", 
         "Questrade: Softare Engineer || Jan 2023 - Apr 2023<br>" + 
         "- Developed new API endpoints for a market data microservice using Nest.js, allowing users to make batch requests of security data<br>" + 
