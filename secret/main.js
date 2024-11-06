@@ -68,11 +68,11 @@ button.onclick = function(){
         set_error_text("Password must contain the highest tape colour you can climb at GRR."); return;
     }
     // 15
-    if(str.includes("l")){
+    if(raw_str.includes("l")){
         set_error_text("All 'L's must be in upper case."); return;
     }
     // 16
-    if(str.includes("S")){
+    if(raw_str.includes("S")){
         set_error_text("All 'S's must be in lower case."); return;
     }
     // 17
@@ -83,8 +83,8 @@ button.onclick = function(){
     if(!str.includes("onepiece")){
         set_error_text("Password must contain something that is real!"); return;
     }
-    // 19\
-    const boness = str.match(/[🦴]/g);
+    // 19
+    const boness = str.match(/🦴/g);
     let bones = boness ? boness.length : 0;
     if(bones < 1){
         set_error_text("Midas 🐕 is hungry. Password must contain a bone for midas."); return;
@@ -134,10 +134,10 @@ button.onclick = function(){
         set_error_text("Password must contain Liggy's real name."); return;
     }
     // 31
-    const waters = str.match(/[`!@#$%^&*()_\-+=\[\]{};':"\\|,.<>\/?~]/g);
+    const waters = str.match(/💧/g);
     let waterrs = waters ? waters.length : 0;
     if(waterrs < 15) {
-        set_error_text("Add water 💧 to your password until it is sufficiently hydrated. " + toString(waterrs) + "/15"); return;
+        set_error_text("Add water 💧 to your password until it is sufficiently hydrated. " + waterrs.toString() + "/15"); return;
     }
     // 32
     if(!str.includes("fein")){
