@@ -9,8 +9,7 @@ function set_error_text(str){
 function formatString(input) {
     return input.replace(/\s+/g, '').toLowerCase();
 }
-
-button.onclick = function(){
+thefun = function(){
     let raw_str = text_box.value;
     let str = formatString(raw_str)
     
@@ -217,3 +216,5 @@ button.onclick = function(){
 
     set_error_text("You passed.")
 }
+
+button.onclick = thefun
