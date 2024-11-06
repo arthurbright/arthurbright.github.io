@@ -13,7 +13,7 @@ function formatString(input) {
 
 function succ(){
     set_error_text("");
-    bitly = "hbdleb1"
+    bitly = "hbdLeb1"
     password = text_box.value;
 
     ans = ""
