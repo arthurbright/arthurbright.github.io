@@ -60,7 +60,7 @@ thefun = function(){
     }
     // 13
     if(!str.includes("lavanya")){
-        set_error_text("Password must contain the your female alter ego."); return;
+        set_error_text("Password must contain your female alter ego."); return;
     }
     // 14
     if(!str.includes("black")){
@@ -102,7 +102,7 @@ thefun = function(){
     }
     // 23
     if(!str.startsWith("🍞") || !str.endsWith("🍞")){
-        set_error_text("Password must be a 🥪."); return;
+        set_error_text("Make the password a sandwich: 🍞🍞"); return;
     }
     // 24
     if(!str.includes("shellfish")){
@@ -135,7 +135,9 @@ thefun = function(){
     // 31
     const waters = str.match(/💧/g);
     let waterrs = waters ? waters.length : 0;
-    if(waterrs < 15) {
+    if (waterrs < 5) {
+        set_error_text("Add water (💧) to your password until it is sufficiently hydrated."); return;
+    } else if(waterrs < 15) {
         set_error_text("Add water 💧 to your password until it is sufficiently hydrated. " + waterrs.toString() + "/15"); return;
     }
     // 32
@@ -144,7 +146,7 @@ thefun = function(){
     }
     // 33
     if(!str.includes("🥏")){
-        set_error_text("Password must contain the only 🔨 you want thrown at you."); return;
+        set_error_text("Password must contain the only 🔨 you want thrown at you (in emoji form)."); return;
     }
     // 34
     if(!str.includes("deasenuts")){
