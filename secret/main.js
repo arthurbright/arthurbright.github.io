@@ -1,5 +1,6 @@
 const button = document.getElementById("butt")
 const error_text = document.getElementById("error")
+const succ_text = document.getElementById("success")
 const text_box = document.getElementById("textbox")
 
 function set_error_text(str){
@@ -9,7 +10,26 @@ function set_error_text(str){
 function formatString(input) {
     return input.replace(/\s+/g, '').toLowerCase();
 }
+
+function succ(){
+    set_error_text("");
+    bitly = "hbdleb1"
+    password = text_box.value;
+
+    ans = ""
+    for (let i = 0; i < bitly.length; i++) {
+        c = bitly[i];
+        let k = password.indexOf(c)
+        ans = ans + k.toString() + " "
+      }
+
+    succ_text.innerHTML = "<br>Excellent password. Now, take the characters at these indices to get a bitly link: " + ans;
+}
+
+
 thefun = function(){
+    // succ();
+    // return;
     let raw_str = text_box.value;
     let str = formatString(raw_str)
     
@@ -216,7 +236,7 @@ thefun = function(){
 
 
 
-    set_error_text("You passed.")
+    succ();
 }
 
 button.onclick = thefun
