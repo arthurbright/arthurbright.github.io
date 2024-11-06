@@ -93,7 +93,7 @@ thefun = function(){
         set_error_text("Password must contain a bone for Frank."); return;
     }
     // 21
-    if(!str.includes("vxix")){
+    if(!str.includes("lxix")){
         set_error_text("Password must contain the Roman numeral for 69."); return;
     }
     // 22
