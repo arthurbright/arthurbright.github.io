@@ -15,9 +15,9 @@ no["kirsten"] = ["alexc", "jennifer", "kevin"]
 no["lavan"] = ["frank", "edward"]
 no["selina"] = []
 
-people = ["alexc", "alexh", "arthur", "chris", "edward", "frank", "jennifer", "kevin", "kirsten", "lavan", "selina"]
+people = ["alexc", "alexh", "arthur", "chris", "edward", "frank", "jennifer", "kevin", "kirsten", "lavan"]
 people_og = people.copy()
-assert(len(people) == 11)
+assert(len(people) == 10)
 num = len(people)
 
 while True:

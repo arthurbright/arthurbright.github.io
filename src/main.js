@@ -367,14 +367,21 @@ function processCommand(str){
         window.open("images/cats" + r + ".jpg", '_blank');
     }
     else if(arr[0] == "help"){
-        var s = "This website is based on the linux terminal. There are four simple commands:<br>" +
+        var s = "This website is based on the linux terminal. There are five simple commands:<br>" +
         "&nbsp;&nbsp;cat &lt;file-path&gt;: View the contents of a file.<br>" + 
         "&nbsp;&nbsp;cd &lt;directory&gt;: Change the current directory.<br>" + 
         "&nbsp;&nbsp;help: Display information about commands.<br>" + 
-        "&nbsp;&nbsp;ls [directory]: List the contents of a directory, or the current directory if no argument is provided.<br><br>" + 
+        "&nbsp;&nbsp;ls [directory]: List the contents of a directory, or the current directory if no argument is provided.<br>" + 
+        "&nbsp;&nbsp;clear: Clear the terminal.<br><br>" + 
         "You can also use Tab to autofill and the up/down arrow keys to view previous commands. <br>" + 
         "Shortcut commands: resume, github, ig, linkedin, piano. <br>";
         append("<span class='yellow'>" + s + "<br> <\span>");
+    }
+    else if(arr[0] == "clear"){
+        fixed.innerHTML = "";
+    }
+    else if(arr[0] == "rm"){
+        window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
     }
     else if(arr[0] in shortcuts){
         window.open(shortcuts[arr[0]], '_blank');
@@ -402,7 +409,7 @@ function autofill(){
     let options = []
     if(numPrevWords == 0 && lastWord.indexOf('/') == -1 && lastWord.indexOf('\\') == -1){
         //autofill cmds as well
-        options = ['cat', 'cd', 'help', 'ls'];
+        options = ['cat', 'cd', 'help', 'ls', "clear"];
         for(let k in shortcuts){
             options.push(k)
         }
