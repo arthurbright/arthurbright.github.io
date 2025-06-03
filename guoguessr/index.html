@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guess the Object</h1>
+  <img src="https://via.placeholder.com/400" alt="Quiz Image" id="quizImage">
+  <div>
+    <input type="text" id="answerInput" placeholder="Enter your answer">
+    <button onclick="submitAnswer()">Submit</button>
+  </div>
+  <p id="feedback"></p>
+</body>
+<script src ='main.js'></script>
+</html>
