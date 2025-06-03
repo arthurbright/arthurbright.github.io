@@ -105,7 +105,7 @@ function submitAnswer() {
         return;
       }
       
-      if (userAnswer.includes(correctAnswer)) {
+      if (userAnswer == correctAnswer) {
         feedback.textContent = "Correct!";
         feedback.style.color = "green";
         next_q();
