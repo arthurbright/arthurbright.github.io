@@ -14,7 +14,7 @@ var qs = [
         ["_ _ _ _ _ _ _ 's", "bluffer.jpg", "bluffer", 8, -60, -20],
         ["_ _ _", "ion.jpg", "ion", 8, -100, -20],
             ["_ _ _ _", "deca2.png", "deca", 6, 0, 40],
-          ["House?", "lavan.jpg", "lavan", 20, -130, 60],
+          ["House?", "lavan.JPG", "lavan", 20, -130, 60],
         ["City?", "tobermory.jpg", "tobermory", 14, -140, 20],
           ["_ _ _ _ _ &nbsp;&nbsp; _ _ _ _ _ _", "civic.jpg", "civiccentre", 8, -105, 20],
   ["⛰️?", "ski.jpg", "tremblant", 10, -130, 90],
