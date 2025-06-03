@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Afacad' rel='stylesheet'>
   <meta charset="UTF-8">
-  <title>Image Quiz</title>
+    <link rel="icon" href="images/icon.png">
+
+  <title>GuoGuessr</title>
+  
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Afacad'; font-size: 22px;
       text-align: center;
       margin: 50px;
+      background-color: #070617;
+      color: white;
+      /* overflow: hidden; */
     }
     img {
       max-width: 80%;
       height: auto;
     }
     input[type="text"] {
+      font-family: 'Afacad';
       padding: 10px;
       font-size: 16px;
       width: 300px;
       margin-top: 20px;
     }
     button {
+        font-family: 'Afacad';
+        background-color: #ed3459;
+        color: white;
       padding: 10px 20px;
       font-size: 16px;
       margin-left: 10px;
       cursor: pointer;
+      border: 0px;
+    }
+
+    .qqq {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        object-position: 150px 150px; 
+        overflow: hidden;
+    }
+
+    .cropContainer {
+      position: relative;
+      overflow: hidden;
+      width: 400px;   /* default width */
+      height: 400px;  /* default height */
+      /* border: 2px solid #ccc; */
+       margin: auto;
+    }
+
+    .croppedImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .lllll {
+        font-size: 15px;
+    }
+
+    p {
+        margin-bottom: 0px;
+        margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Guess the Object</h1>
-  <img src="https://via.placeholder.com/400" alt="Quiz Image" id="quizImage">
+  <img src="images/logo (1).png" alt="Quiz Image" id="aaaaaa" width="400">
+  <div id = "title">
+     <h1>Welcome to GuoGuessr!</h1>
+    <p> The goal is to guess something about each of these images of Kevin.</p>
+    <p> Do not use inspect element!</p>
+    <p> (P.S. You may want to keep track of your answers)</p>
+    <p> Let's start off with an easy one:</p>
+  </div>
+  <p></p>
+  <div class="cropContainer">
+    <img src="images/icon.png" alt="Quiz Image" id="quizImage" class="qqq" class="croppedImage">
+  </div>
+  <p id="question">Hello</p>
   <div>
     <input type="text" id="answerInput" placeholder="Enter your answer">
     <button onclick="submitAnswer()">Submit</button>
   </div>
+  <p class = "lllll" id="lives">Lives Remaining: 100</p>
   <p id="feedback"></p>
 </body>
 <script src ='main.js'></script>
