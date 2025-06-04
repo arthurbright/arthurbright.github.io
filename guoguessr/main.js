@@ -121,7 +121,7 @@ function submitAnswer() {
 arr = ['icdc', 'tt', 'chickenjockey', 'cmh', 'baboons', 'bluffer', 'ion', 'deca', 'lavan', 'tobermory', 'civiccentre', 'tremblant', 'apprehend', 'uniqlo', 'cotty', 'music', 'linkedin', 'lavansat', 'kitchener', 'yes', 'kevin', 'guo', 'eye', 'hamlet', 'ferb', 'balloon', 'etch', 'made', 'lock', 'minecraft', 'ayo', 'obama', 'abc', 'hola', 'slink', 'onset', 'sap', 'gum', 'yunshang', 'oink', 'glow', 'minor', 'antidisestablishmentarianism'];
 
 function check(s){
-    if(s.length != 202){
+    if(s.length > 202){
       return false;
     }
     for(i in arr){
