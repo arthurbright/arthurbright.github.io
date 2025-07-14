@@ -9,23 +9,23 @@ button.addEventListener('click', handleClick);
 
 ind = 0
 pastMoves = [];
-questions = [
+questions_liggy = [
   [
     "songs/mary.wav", 
     [9, 9, 9, 11, 14, 14],
-    "H"
+    "So, another challenger enters."
   ],
 
   [
     "songs/turk.wav", 
     [21, 19, 18, 19, 23],
-    "E"
+    "What makes you think you can succeed?"
   ],
 
   [
      "songs/wonder.wav", 
     [13, 15, 8, 11, 13, 11],
-    "N"
+    "None of the others could."
   ],
 
 [
@@ -114,6 +114,183 @@ questions = [
   ],
 
 ];
+
+
+questions = [
+  [
+    "songs/mary.wav", 
+    [9, 9, 9, 11, 14, 14],
+    "So, another challenger enters."
+  ],
+
+  [
+    "songs/turk.wav", 
+    [21, 19, 18, 19, 23],
+    "So, another challenger enters."
+  ],
+
+    [
+    "songs/nocturne.wav", 
+    [26, 24, 26, 24, 22],
+    "What makes you think you can do it?"
+  ],
+
+      [
+    "songs/fur.wav", 
+    [23, 22, 23, 18, 21, 19, 16],
+    "Hell, most of the others could even make it past the fifth one."
+  ],
+
+        [
+    "songs/numb.wav", 
+    [13, 15, 18, 15],
+    "Interesting, you haven't given up yet."
+  ],
+
+    [
+    "songs/start.wav", 
+    [24, 22, 20, 19, 22, 20, 19, 17],
+    "But soon enough, you shall fall just as they did."
+  ],
+
+      [
+    "songs/sunshine.wav", 
+    [21, 19, 21, 24, 21],
+    "It is only a matter of time."
+  ],
+
+  [
+    "songs/discord.wav",
+    [26, 26, 24, 26, 24, 19, 20],
+    "This is not a task for mere mortals."
+  ],
+
+      [
+    "songs/runaway.wav", 
+    [15, 15, 13, 15, 17, 15, 13],
+    "Yet..."
+  ],
+
+  [
+    "songs/claire.wav", 
+    [15, 27, 24],
+    "Somehow..."
+  ],
+
+    [
+    "songs/name.wav",
+    [26, 28, 30, 31, 30, 28, 30],
+    "You seem to inch your way forwards..."
+  ],
+
+    [
+    "songs/fant.wav", 
+    [8, 11, 10, 8, 10, 8, 7, 8, 11, 15],
+    "... closer and closer to the light."
+  ],
+
+          [
+    "songs/laos.wav", 
+    [23, 18, 20],
+    "Perhaps you are different."
+  ],
+
+        [
+    "songs/sunroof.wav", 
+    [24, 24, 24, 21, 24, 26, 21, 21, 22, 21, 19, 17],
+    "Perhaps... could it be? No..."
+  ],
+
+        [
+    "songs/roan.wav", 
+    [25, 25, 21],
+    "No..."
+  ],
+
+   [
+    "songs/racing.wav", 
+    [19, 22, 24, 26, 19, 34, 33, 29, 26, 29, 31, 29, 26, 24, 19],
+    "NO!"
+  ],
+
+      [
+    "songs/vampire.wav", 
+    [12, 12, 12, 12, 14, 16],
+    "It simply cannot be."
+  ],
+
+ [
+    "songs/juno.wav", 
+    [19, 21, 12, 16, 16, 14],
+    "You were supposed to be a myth."
+  ],
+
+
+            [
+    "songs/driver.wav", 
+    [21, 24, 24, 22, 21, 19, 17, 14],
+    "Could you be..."
+  ],
+
+              [
+    "songs/one.wav", 
+    [23, 23, 25, 26, 25, 25, 26, 28],
+    "The one they call Fronk?"
+  ],
+
+            [
+    "songs/mayday.wav", 
+    [6, 9, 15, 18, 21, 18, 15, 9],
+    "Please."
+  ],
+
+  
+        [
+    "songs/pvz.wav", 
+    [20, 21, 14],
+    "PLEASE!"
+  ],
+
+                [
+    "songs/meow.wav", 
+    [30, 31, 23, 26, 24],
+    "Have mercy on me."
+  ],
+
+  
+            [
+    "songs/apt.wav", 
+    [27, 27, 27, 26, 26, 26],
+    "I beg of you. Do not take another step forward."
+  ],
+
+    [
+    "songs/happy.wav", 
+    [24, 24, 23, 19, 21, 19],
+    "..."
+  ],
+
+];
+
+function showFullScreenText(message, duration = 1000) {
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+    overlay.textContent = message;
+
+    document.body.appendChild(overlay);
+
+        // Force a reflow and then add the fade-out class
+    requestAnimationFrame(() => {
+      overlay.classList.add("fade-out");
+    });
+
+    // Remove from DOM after fade completes
+    setTimeout(() => {
+      overlay.remove();
+    }, duration + 10000); // 2s for fade transition
+  }
+
+
  aaaa = document.createElement("AUDIO");
 aaaa.volume = 0.6
 function handleClick() {
@@ -153,18 +330,34 @@ function checkMoves(){
 const ttt = document.getElementById("ttt")
      aaaaa = document.createElement("AUDIO");
     aaaaa.src = "songs/ding.wav"
-    
-   
+ans  = "olivewithdyingistolove123"
+ans2 = "AAAAAAAAAAAAAAAAAAAAAAAAA"
+console.log(ans.length)
+console.log(questions.length)
+
+function handleKeyPress(event) {
+    console.log("You pressed:", event.key);
+    nextQ();
+
+  }
+    // document.addEventListener("keydown", handleKeyPress);
 function nextQ() {
+  
 if(ind < questions.length){
-    button.innerHTML = button.innerHTML + questions[ind][2];
+    button.innerHTML = button.innerHTML + ans[ind];
     ind += 1;
       pastMoves = []
      aaaaa.play();
+       // Example usage:
+       try{
+         showFullScreenText(questions[ind][2], 2000);
+       }
+  catch {}
 }   
+
   if(ind >= questions.length) {
-    ttt.innerHTML = "You wake up in a █izarre, myster█ous land, the Land of the Liggy. Wi█h no civi█ization in sight, you get a bit jigg█. <br> How will you escape? Can you hold strong? The only way to get out ... is to play along ...";
-  }
+    ttt.innerHTML = "If you are reading this message, I am dead. I have █een trapped in th█s room for several days wi█hout food or water. I don't know who did this, or why. <br> Al█ that I have left are the voices in my head... and this ke█board... "
+      }
 
   console.log("next", ind)
 }

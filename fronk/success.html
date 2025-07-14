@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fronk.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+
+    body {
+      /* display: flex;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+      flex-direction: column; */
+      text-align: center;
+    }
+
+    .content {
+      animation: fadeIn 2s ease-out;
+      z-index: 2;
+      position: relative;
+      top: 0
+    }
+
+    h1 {
+      font-size: 4em;
+      text-shadow: 2px 2px 6px black;
+      margin: 0;
+    }
+
+    .images {
+      margin-top: 20px;
+    }
+
+    .images img {
+      height: 200px;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h3>A blinding light emerges from the cracks in the cell wall.</h3>
+    <p>As your eyes adjust, you see the vast green expanse of the open field.</p>
+    <p>The nightmare - it's finally over.</p>
+    <p><br> </p>
+    <p>And... what's that? Theres a man sitting on a bench, three meters to your left.</p>
+    <p>You decide to approach the mysterious man. Am I about to meet my tormentor?</p>
+    <p>He turns around, and says:</p>
+    <p><br></p> <p> <br></p>
+       <p>Sorry I trapped you that dungeon lol.</p>
+       <p>I thought it'd be a funny birthday prank.</p>
+       <p>Anyways, ignore the dead body you found in there. That was Lavan, I tested my dungeon on him.</p>
+        <p>I guess it worked. Hehe...</p>
+        <p><br> </p>
+        <p>But it seems you were able to survive with flying colours.</p>
+        <p>As I would expect.</p>
+        <p>This dungeon was designed so that only the GOAT could pass.</p>
+        <p>Anyways...</p> 
+        <p><br> </p>
+        <p>I don't know about you, but I think you should go enjoy your birthday.</p>
+         <p>Outside of the dungeon.</p>
+               <p>🎂 Happy Birthday Frank! 🎉</p>
+                          <div class="images">
+      <img src="fronk1.jpg" alt="Balloon">
+      <img src="fronk2.JPG" alt="Cake">
+      <img src="fronk3.png" alt="Gift">
+    </div>
+
+  </div>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Fire initial burst
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+
+    // Fire small bursts every 1.5 seconds
+    setInterval(() => {
+      confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: Math.random() * 0.6 }
+      });
+    }, 1500);
+  </script>
+
+</body>
+</html>
