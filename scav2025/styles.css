@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', sans-serif;
+    background: linear-gradient(#0b3d91, #062f4f);
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.prompt {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e74c3c;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Snow container */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Individual snow layers */
+.snow {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 100%, transparent 0),
+        radial-gradient(2px 2px at 40% 70%, white 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 60% 40%, white 100%, transparent 0),
+        radial-gradient(1px 1px at 80% 80%, white 100%, transparent 0),
+        radial-gradient(2px 2px at 10% 90%, white 100%, transparent 0);
+    background-size: 200px 200px;
+    animation: snowfall 18s linear infinite;
+    opacity: 0.8;
+}
+
+/* Different speeds for depth */
+.snow:nth-child(2) {
+    animation-duration: 25s;
+    opacity: 0.5;
+    background-size: 300px 300px;
+}
+
+.snow:nth-child(3) {
+    animation-duration: 35s;
+    opacity: 0.3;
+    background-size: 400px 400px;
+}
+
+/* Snow falling animation */
+@keyframes snowfall {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(50%);
+    }
+}
+
+/* Make sure content stays above snow */
+.container {
+    position: relative;
+    z-index: 2;
+}
