@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>🎄 Christmas Scavenger Hunt 🎄</title>
+    <title>🎄Icy Imposter Inquest 🎄</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
 </head>
 <body>
     <div class="snow"></div>
@@ -14,22 +16,26 @@
         <div class="snow"></div>
     </div>
 
+    <div class="page"></div>
+        <div class="container">
+            <h1>ICY IMPOSTER INQUEST</h1>
 
-    <div class="container">
-        <h1>🎅 Christmas Scavenger Hunt 🎄</h1>
+            <div id="prompt" class="prompt">
+                <img id="promptImage" class="prompt-image" />
+                <p id="promptText"></p>
+            </div>
 
-        <p id="prompt" class="prompt"></p>
+            <input
+                type="text"
+                id="answerInput"
+                placeholder="Type your answer here..."
+                autocomplete="off"
+            />
 
-        <input
-            type="text"
-            id="answerInput"
-            placeholder="Type your answer here..."
-            autocomplete="off"
-        />
+            <button id="submitBtn">🎁 Submit</button>
 
-        <button id="submitBtn">🎁 Submit</button>
-
-        <p id="feedback" class="feedback"></p>
+            <p id="feedback" class="feedback"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
