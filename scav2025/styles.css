@@ -109,7 +109,7 @@ button:hover {
         transform: translateY(0);
     }
     to {
-        transform: translateY(50%);
+        transform: translateY(33%);
     }
 }
 
