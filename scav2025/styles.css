@@ -10,7 +10,8 @@ html, body {
 body {
     margin: 0;
     font-family: 'Georgia', sans-serif;
-    background: linear-gradient(#0b3d91, #062f4f);
+    /* background: linear-gradient(#0b3d91, #062f4f); */
+    background: #062f4f;
     color: white;
     height: 100vh;
     display: flex;
@@ -22,13 +23,20 @@ body {
 .page {
     position: fixed;
     inset: 0;
-    display: grid;
-    place-items: center;
     z-index: 1;
-    /* overflow: hidden; */
+
+    display: flex;
+    justify-content: center;
+
+    overflow-y: auto;              /* ✅ vertical scroll allowed */
+    overflow-x: hidden;            /* ❌ no horizontal scroll */
+    -webkit-overflow-scrolling: touch;
+
+    padding: 16px 0;               /* breathing room on small screens */
 }
 
 .container {
+    margin: auto;
     max-width: 420px;
     width: calc(100% - 32px);
     padding: 24px;
