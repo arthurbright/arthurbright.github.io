@@ -1,0 +1,155 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; 🔒 prevents vertical growth */
+    /* overscroll-behavior: none; */
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', sans-serif;
+    /* background: linear-gradient(#0b3d91, #062f4f); */
+    background: #062f4f;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* touch-action: none;     prevents drag-scroll */
+}
+
+.page {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+
+    overflow-y: auto;              /* ✅ vertical scroll allowed */
+    overflow-x: hidden;            /* ❌ no horizontal scroll */
+    -webkit-overflow-scrolling: touch;
+
+    padding: 16px 0;               /* breathing room on small screens */
+}
+
+.container {
+    margin: auto;
+    max-width: 420px;
+    width: calc(100% - 32px);
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.prompt {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e74c3c;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Snow container */
+.snow-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    contain: strict;   /* prevents layout escape */
+    z-index: 0;
+}
+
+.snow {
+    position: absolute;
+    inset: 0;          /* ❗ no negative inset */
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 100%, transparent 0),
+        radial-gradient(2px 2px at 40% 70%, white 100%, transparent 0),
+        radial-gradient(1.5px 1.5px at 60% 40%, white 100%, transparent 0),
+        radial-gradient(1px 1px at 80% 80%, white 100%, transparent 0),
+        radial-gradient(2px 2px at 10% 90%, white 100%, transparent 0);
+    background-size: 200px 200px;
+    animation: snowfall 25s linear infinite;
+    will-change: transform;
+}
+
+.snow:nth-child(2) {
+    animation-duration: 35s;
+    background-size: 300px 300px;
+    opacity: 0.5;
+}
+
+.snow:nth-child(3) {
+    animation-duration: 50s;
+    background-size: 400px 400px;
+    opacity: 0.3;
+}
+
+@keyframes snowfall {
+    from { transform: translateY(-33%); }
+    to   { transform: translateY(33%); }
+}
+
+
+/* Make sure content stays above snow */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.prompt {
+    margin-bottom: 15px;
+}
+
+.prompt-image {
+    max-width: 100%;
+    /* max-height: 200px; */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: none; /* hidden unless used */
+}
+
+
+.hidden-clue {
+    background: black;
+    color: black;
+}
+
+.hidden-clue::selection,
+.hidden-clue::-moz-selection {
+    background: black;
+    color: white;
+}
