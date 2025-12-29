@@ -18,21 +18,36 @@ const clues = [
     {
         prompt: "Isn't it a bit chilly in here?",
         answer: "star",
-        image: "images/tree-topper.jpg"
+        // image: "images/tree-topper.jpg"
     },
     {
-        prompt: "🧦 I hang by the fireplace and get filled with treats. What am I?",
-        answer: "stocking"
+        prompt: "",
+        answer: "s",
+        image: "images/stair.png"
     },
     {
-        prompt: "🎁 I’m wrapped up tight with ribbon and bow. What am I?",
-        answer: "present",
+        prompt: "TODO: SKETCH 1",
+        answer: "s",
         image: "images/present.jpg"
     },
     {
-        prompt: "🎅 Final clue! Who says 'Ho Ho Ho'?",
-        answer: "santa",
+        prompt: "TODO: spot the difference 1",
+        answer: "s",
         image: "images/santa.jpg"
+    },
+    {
+        prompt: "Between the radio and the red light.",
+        answer: "s",
+        // image: "images/santa.jpg"
+    },
+    {
+        prompt: "",
+        answer: "0",
+        image: "images/integral.png"
+    },
+    {
+        prompt: "Bad news: Percy has gone and eaten most of the prizes for the scavenger hunt. This is no longer a team effort; there is only one winner. You must now turn against your fellow crewmates; it is every man for themselves! <br\><br\> The final puzzle keys to a SECRET phrase; the first person to shout this phrase out loud wins. Here is the puzzle:",
+        image: "final.png"
     }
 ];
 
