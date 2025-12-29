@@ -141,3 +141,15 @@ button:hover {
     margin-bottom: 10px;
     display: none; /* hidden unless used */
 }
+
+
+.hidden-clue {
+    background: black;
+    color: black;
+}
+
+.hidden-clue::selection,
+.hidden-clue::-moz-selection {
+    background: black;
+    color: white;
+}

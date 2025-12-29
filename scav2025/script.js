@@ -8,6 +8,10 @@ const clues = [
         answer: "",
     },
     {
+        prompt: '<p class="hidden-clue"> TESST </p> <p class="hidden-clue"> TESST </p>',
+        answer: "",
+    },
+    {
         prompt: "Welcome to the III. This is a scavenger hunt. All clues can be found on the main floor of this facility. <br\><br\>"
          + "You will work as a team with your fellow crewmates to solve each clue, and a prize awaits at the end! <br\><br\>" 
          + "All crewmates have been assigned a common task, which must be carried out before the hunt ends. However, there is at least 1 imposter among you, who does not know the task. The goal of the imposter is to blend in. <br\><br\> "
