@@ -7,10 +7,10 @@ const clues = [
         prompt: "Enter your initials (first + last):",
         answer: "",
     },
-    {
-        prompt: '<p class="hidden-clue"> TESST </p> <p class="hidden-clue"> TESST </p>',
-        answer: "s",
-    },
+    // {
+    //     prompt: '<p class="hidden-clue"> TESST </p> <p class="hidden-clue"> TESST </p>',
+    //     answer: "s",
+    // },
     {
         prompt: "Welcome to the III. This is a scavenger hunt. All clues can be found on the main floor of this facility. <br\><br\>"
          + "You will work as a team with your fellow crewmates to solve each clue, and a prize awaits at the end! <br\><br\>" 
@@ -22,27 +22,27 @@ const clues = [
     },
     {
         prompt: "Isn't it a bit chilly in here?",
-        answer: "s",
+        answer: "toilet",
         // image: "images/tree-topper.jpg"
     },
     {
         prompt: "",
-        answer: "s",
+        answer: "nasus",
         image: "images/stair.png"
     },
     {
-        prompt: "TODO: SKETCH 1",
-        answer: "s",
-        image: "images/present.jpg"
+        prompt: "",
+        answer: "code",
+        image: "images/sketch1.jpg"
     },
     {
-        prompt: "TODO: spot the difference 1",
-        answer: "s",
-        image: "images/santa.jpg"
+        prompt: "",
+        answer: "cane",
+        image: "images/diff.png"
     },
     {
         prompt: "Between the radio and the red light.",
-        answer: "s",
+        answer: "bells",
         // image: "images/santa.jpg"
     },
     {
@@ -51,7 +51,7 @@ const clues = [
         image: "images/integral.png"
     },
     {
-        prompt: "Bad news: Percy has gone and eaten most of the prizes for the scavenger hunt. This is no longer a team effort; there is only one winner. You must now turn against your fellow crewmates; it is every man for themselves! <br\><br\> The final puzzle keys to a SECRET phrase; the first person to shout this phrase out loud wins. Here is the puzzle:",
+        prompt: "Good news: only one more puzzle to go! Bad news: Percy has gone and eaten most of the prizes for the scavenger hunt. This is no longer a team effort; there is only one winner. You must now turn against your fellow crewmates; it is every man for themselves! <br\><br\> The final puzzle keys to a SECRET phrase; the first person to shout this phrase out loud wins. Here is the puzzle:",
         image: "final.png"
     }
 ];
