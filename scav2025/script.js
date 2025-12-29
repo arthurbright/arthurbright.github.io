@@ -9,7 +9,7 @@ const clues = [
     },
     {
         prompt: '<p class="hidden-clue"> TESST </p> <p class="hidden-clue"> TESST </p>',
-        answer: "",
+        answer: "s",
     },
     {
         prompt: "Welcome to the III. This is a scavenger hunt. All clues can be found on the main floor of this facility. <br\><br\>"
