@@ -52,7 +52,7 @@ const clues = [
     },
     {
         prompt: "Good news: only one more puzzle to go! Bad news: Percy has gone and eaten most of the prizes for the scavenger hunt. This is no longer a team effort; there is only one winner. You must now turn against your fellow crewmates; it is every man for themselves! <br\><br\> The final puzzle keys to a SECRET phrase; the first person to shout this phrase out loud wins. Here is the puzzle:",
-        image: "final.png"
+        image: "images/final.jpg"
     }
 ];
 
@@ -103,6 +103,7 @@ function checkAnswer() {
     }
 
     if(currentClue == 0){
+        if(userAnswer.length != 2) return;
         // initial
         if(imposters.includes(userAnswer)){
             imposter = true
