@@ -10,7 +10,7 @@ html, body {
 body {
     margin: 0;
     font-family: 'Georgia', sans-serif;
-    background: linear-gradient(#0b3d91, #062f4f);
+    background: #062f4f;
     color: white;
     height: 100vh;
     display: flex;
