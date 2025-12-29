@@ -74,17 +74,16 @@ button:hover {
 /* Snow container */
 .snow-container {
     position: fixed;
-    inset: 0;            /* shorthand for top/right/bottom/left: 0 */
+    inset: 0;
     pointer-events: none;
-    overflow: hidden;    /* 🚫 no scrollbars from snow */
+    overflow: hidden;
     z-index: 0;
 }
 
-
-/* Individual snow layers */
+/* Snow layers */
 .snow {
     position: absolute;
-    inset: -50%;         /* stays off-screen but never expands layout */
+    inset: -50%;
     background-image:
         radial-gradient(2px 2px at 20% 30%, white 100%, transparent 0),
         radial-gradient(2px 2px at 40% 70%, white 100%, transparent 0),
@@ -92,33 +91,26 @@ button:hover {
         radial-gradient(1px 1px at 80% 80%, white 100%, transparent 0),
         radial-gradient(2px 2px at 10% 90%, white 100%, transparent 0);
     background-size: 200px 200px;
-    animation: snowfall 18s linear infinite;
-    opacity: 0.8;
+    animation: snowfall 20s linear infinite;
+    opacity: 0.7;
     will-change: transform;
 }
 
-
-/* Different speeds for depth */
 .snow:nth-child(2) {
-    animation-duration: 25s;
-    opacity: 0.5;
+    animation-duration: 30s;
+    opacity: 0.45;
     background-size: 300px 300px;
 }
 
 .snow:nth-child(3) {
-    animation-duration: 35s;
+    animation-duration: 45s;
     opacity: 0.3;
     background-size: 400px 400px;
 }
 
-/* Snow falling animation */
 @keyframes snowfall {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(33%);
-    }
+    from { transform: translateY(0); }
+    to   { transform: translateY(33%); }
 }
 
 /* Make sure content stays above snow */
