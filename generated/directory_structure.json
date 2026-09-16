@@ -1,0 +1,22 @@
+{
+    "name": "~",
+    "type": "directory",
+    "children": [
+        {
+            "name": "tes1t",
+            "type": "file",
+            "contents": "ABC\ntest"
+        },
+        {
+            "name": "test_folder",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "Arthur-Bright-Resume.pdf",
+                    "type": "served_file",
+                    "full_path": "src\\~\\test_folder\\Arthur-Bright-Resume.pdf"
+                }
+            ]
+        }
+    ]
+}
