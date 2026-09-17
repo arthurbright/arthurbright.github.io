@@ -1,0 +1,5 @@
+Bloomberg LP: Software Engineer Intern || Aug 2023 - Dec 2023
+Team: Entity Classification and Relationships
+- Researched semantic graph storage and pathfinding performance
+- Developed service to cache and retrive ontology graph paths, greatly improving response time
+- Developed pipeline to automatically recompute caches upon graph changes

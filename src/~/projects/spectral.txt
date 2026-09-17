@@ -1,0 +1,2 @@
+Neural network that identifies musical chords from audio samples using spectral analysis (WIP). Built with Python + Tensorflow/Keras.
+Source: <a href=https://github.com/arthurbright/Spectral target=_blank>https://github.com/arthurbright/Spectral<\a>

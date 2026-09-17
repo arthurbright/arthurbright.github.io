@@ -3,18 +3,147 @@
     "type": "directory",
     "children": [
         {
-            "name": "tes1t",
-            "type": "file",
-            "contents": "ABC\ntest"
-        },
-        {
-            "name": "test_folder",
+            "name": "about",
             "type": "directory",
             "children": [
                 {
-                    "name": "Arthur-Bright-Resume.pdf",
+                    "name": "bio",
+                    "type": "file",
+                    "contents": "Hi, my name is Arthur! <br><br>I love making music and singing in the shower. I'm also into anything math (especially competitions :D).<br><br>I graduated from University of Waterloo CS in 2026. What I'm up to now? No one knows..."
+                },
+                {
+                    "name": "contacts",
+                    "type": "file",
+                    "contents": "Email: <a href=mailto:artb1234567@gmail.com target=_blank>artb1234567@gmail.com</a><br>LinkedIn: <a href=https://www.linkedin.com/in/a2bright/ target=_blank>https://www.linkedin.com/in/a2bright</a> <br>Github: <a href=https://github.com/arthurbright target=_blank>https://github.com/arthurbright</a><br>Instagram: <a href=https://www.instagram.com/artb_64 target=_blank>@artb_64</a>"
+                },
+                {
+                    "name": "education",
+                    "type": "file",
+                    "contents": "University of Waterloo (2021-2026): Bachelor of Computer Science<br>- <a href=https://uwaterloo.ca/alumni/alumni-gold-medals target=_blank>Alumni Gold Medal</a> Recipient \ud83e\udd47<br>- 97.7 Faculty Average, 97.8 Overall Average; Advanced level math/CS courses<br>- Putnam Top 120 (best score: 50)<br>- UW Small C champion"
+                },
+                {
+                    "name": "hobbies",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "math",
+                            "type": "file",
+                            "contents": "I was a huge math nerd in school (and still am :D). I particularly enjoyed writing math contests,<br>and often ranked in Canada's top 30. I am a two-time CMO qualifier and also achieved top 120 in the Putnam.<br><br>I enjoy any logical problems/puzzles; shoot me with your best shot >:)"
+                        },
+                        {
+                            "name": "music",
+                            "type": "file",
+                            "contents": "I've often said that if I wasn't into tech, then I would be doing music.<br><br>I play piano (RCM 10) and drums, but I dabble in guitar and bass as well.<br>I've uploaded a bunch of covers on my primary instagram <a href=https://www.instagram.com/artb_64 target=_blank>@artb_64</a>.<br>I am also good at playing by ear and have hundreds of short covers on my second account <a href=https://www.instagram.com/c_major._/ target=_blank>@c_major._</a><br><br>In past years, I've been really getting into music theory and production. <br>Would really like to start a band someday!"
+                        },
+                        {
+                            "name": "sports",
+                            "type": "file",
+                            "contents": "I play basketball, volleyball, and ultimate frisbee. I also swim and climb!<br><br>Half marathon best time: 1:47:39<br>10k best time: 0:49:45<br><br>Check out my <a href=backflip.mp4 target=_blank>backflip</a>!"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "experience",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "2022-imagine",
+                    "type": "file",
+                    "contents": "Imagine Communications: Backend Developer || May 2022 - Aug 2022<br>- Developed a robust HTTP client in .NET for communicating with Amazon S3 cloud storage<br>- Optimized PostgreSQL connections by strategically pruning idle connections, improving performance tenfold"
+                },
+                {
+                    "name": "2023-bloomberg",
+                    "type": "file",
+                    "contents": "Bloomberg LP: Software Engineer Intern || Aug 2023 - Dec 2023<br>Team: Entity Classification and Relationships<br>- Researched semantic graph storage and pathfinding performance<br>- Developed service to cache and retrive ontology graph paths, greatly improving response time<br>- Developed pipeline to automatically recompute caches upon graph changes"
+                },
+                {
+                    "name": "2023-questrade",
+                    "type": "file",
+                    "contents": "Questrade: Softare Engineer Intern || Jan 2023 - Apr 2023<br>- Developed new API endpoints for a market data microservice using Nest.js, allowing users to make batch requests of security data<br>- Implemented data preprocessing and safety checks to prevent microservice errors/outages<br>- Identified and fixed 30+ production bugs in trading platform, including memory leaks"
+                },
+                {
+                    "name": "2024-janestreet",
+                    "type": "file",
+                    "contents": "Jane Street: Software Engineer Intern || May 2024 - Aug 2024<br>- Team 1: Fixed Income<br>- Team 2: Core Services"
+                },
+                {
+                    "name": "2025-snowflake",
+                    "type": "file",
+                    "contents": "Snowflake: Software Engineer Intern || May 2025 - Aug 2025<br>Team: Storage Optimization<br>- Worked on compaction routines to decrease segmentation on tables with frequent input"
+                },
+                {
+                    "name": "2025-waabi",
+                    "type": "file",
+                    "contents": "Waabi: Research Engineer Intern || Sept 2025 - Dec 2025<br>Team: PnP (Perception and Planning)<br>- Improved CV model's EMV recognition by incorporating new datasets and tuning parameters"
+                }
+            ]
+        },
+        {
+            "name": "projects",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "graph.io",
+                    "type": "file",
+                    "contents": "A graph visualizer! Draw a graph and run some common graph algorithms on it. Built with Unity.<br>Try it out: <a href=https://simmer.io/@afur/graph-io target=_blank>https://simmer.io/@afur/graph-io (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Graph.io target=_blank>https://github.com/arthurbright/Graph.io"
+                },
+                {
+                    "name": "hotspot",
+                    "type": "file",
+                    "contents": "Crowd-sourced web app that tracks COVID-19 spread on a heatmap. Made with Node.js + React + MongoDB + Google Maps. Winner at Garuda Hacks 2020<br>Source: <a href=https://github.com/thesilican/garudahacks-2020 target=_blank>https://github.com/thesilican/garudahacks-2020<\\a>"
+                },
+                {
+                    "name": "manhunt",
+                    "type": "file",
+                    "contents": "A web app for friends to play manhunt! Run around and hide on campus. Built with Node.js + Socket<br>Try it out: <a href=https://manhunt.glitch.me/ target=_blank>https://manhunt.glitch.me/<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Manhunt target=_blank>https://github.com/arthurbright/Manhunt<\\a>"
+                },
+                {
+                    "name": "multipiano",
+                    "type": "file",
+                    "contents": "A multiplayer piano! Built with Node.js + Socket.<br>Try it out: <a href=https://multipiano.glitch.me/ target=_blank>https://multipiano.glitch.me/<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Multipiano target=_blank>https://github.com/arthurbright/Multipiano<\\a>"
+                },
+                {
+                    "name": "my-website",
+                    "type": "file",
+                    "contents": "This website! Source: <a href=https://github.com/arthurbright/arthurbright.github.io target=_blank>https://github.com/arthurbright/arthurbright.github.io<\\a><br><br>If you would like to use this site as a template for your own personal site, feel free!"
+                },
+                {
+                    "name": "portal2d",
                     "type": "served_file",
-                    "full_path": "src\\~\\test_folder\\Arthur-Bright-Resume.pdf"
+                    "full_path": "src\\~\\projects\\portal2d"
+                },
+                {
+                    "name": "remind",
+                    "type": "file",
+                    "contents": "A discord bot for scheduling and recieving reminders.<br>Source: <a href=https://github.com/arthurbright/Re-mind target=_blank>https://github.com/arthurbright/Re-mind<\\a>"
+                },
+                {
+                    "name": "sbotify",
+                    "type": "file",
+                    "contents": "Music downloader, like Spotify, but for free! Built with Node.js.<br>Source: <a href=https://github.com/arthurbright/Soundtrack-downloader target=_blank>https://github.com/arthurbright/Soundtrack-downloader<\\a>"
+                },
+                {
+                    "name": "spectral",
+                    "type": "file",
+                    "contents": "Neural network that identifies musical chords from audio samples using spectral analysis (WIP). Built with Python + Tensorflow/Keras.<br>Source: <a href=https://github.com/arthurbright/Spectral target=_blank>https://github.com/arthurbright/Spectral<\\a>"
+                }
+            ]
+        },
+        {
+            "name": "resume.pdf",
+            "type": "served_file",
+            "full_path": "src\\~\\resume.pdf"
+        },
+        {
+            "name": "secret",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "top-secret",
+                    "type": "file",
+                    "contents": "THERE ARE INFINITELY MANY TWIN PRIMES<br><br>Type 'piano' to play a piano.<br>Also, type 'cats' to see a random picture of my cats, Lulu and Percy :3"
                 }
             ]
         }

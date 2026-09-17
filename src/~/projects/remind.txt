@@ -1,0 +1,2 @@
+A discord bot for scheduling and recieving reminders.
+Source: <a href=https://github.com/arthurbright/Re-mind target=_blank>https://github.com/arthurbright/Re-mind<\a>

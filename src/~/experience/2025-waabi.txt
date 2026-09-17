@@ -1,0 +1,3 @@
+Waabi: Research Engineer Intern || Sept 2025 - Dec 2025
+Team: PnP (Perception and Planning)
+- Improved CV model's EMV recognition by incorporating new datasets and tuning parameters

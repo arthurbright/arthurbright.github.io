@@ -10,17 +10,19 @@ function pad(str, len){
 }
 
 export class Folder{
-    constructor(name){
+    constructor(name, parent){
         this.name = name;
         this.subfolders = [];
         this.files = [];
         this.path = name;
-        this.parent = undefined;
+        if(!(parent === undefined)){
+            this.path = parent.path + "/" + name
+        }
+        this.parent = parent
     }
 
     addFolder(folder){
         this.subfolders.push(folder);
-        folder.path = this.path + "/" + folder.name;
         folder.parent = this;
     }
 

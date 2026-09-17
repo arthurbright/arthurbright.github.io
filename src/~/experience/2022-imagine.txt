@@ -1,0 +1,3 @@
+Imagine Communications: Backend Developer || May 2022 - Aug 2022
+- Developed a robust HTTP client in .NET for communicating with Amazon S3 cloud storage
+- Optimized PostgreSQL connections by strategically pruning idle connections, improving performance tenfold

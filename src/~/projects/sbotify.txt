@@ -1,0 +1,2 @@
+Music downloader, like Spotify, but for free! Built with Node.js.
+Source: <a href=https://github.com/arthurbright/Soundtrack-downloader target=_blank>https://github.com/arthurbright/Soundtrack-downloader<\a>

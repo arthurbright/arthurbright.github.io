@@ -1,0 +1,2 @@
+Crowd-sourced web app that tracks COVID-19 spread on a heatmap. Made with Node.js + React + MongoDB + Google Maps. Winner at Garuda Hacks 2020
+Source: <a href=https://github.com/thesilican/garudahacks-2020 target=_blank>https://github.com/thesilican/garudahacks-2020<\a>

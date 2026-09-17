@@ -1,0 +1,3 @@
+Snowflake: Software Engineer Intern || May 2025 - Aug 2025
+Team: Storage Optimization
+- Worked on compaction routines to decrease segmentation on tables with frequent input

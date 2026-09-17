@@ -1,11 +1,14 @@
 import { Folder, File} from "./structure.js";
-
+let home_folder = "~"
 
 //get a folder from its path
 function getFolder(ostr, getf=false){
     let str = ostr;
-    if(str.startsWith("/") || str.startsWith("\\")){
-        str = "home" + str;
+    // if(str.startsWith("~") || str.startsWith("\\")){
+    //     str = home_folder + str;
+    // }
+    if(str.startsWith(home_folder)){
+        // do nothing
     }
     else{
         str = curFolder.path + "/" + str;
@@ -78,11 +81,11 @@ async function loadDirectoryStructure() {
     return processDirectory(structure);
 }
 
-function processDirectory(directory) {
-    let dir_obj = new Folder(directory.name);
+function processDirectory(directory, parent=undefined) {
+    let dir_obj = new Folder(directory.name, parent);
     for (const item of directory.children) {
         if (item.type === "directory") {
-            dir_obj.addFolder(processDirectory(item));
+            dir_obj.addFolder(processDirectory(item, dir_obj));
         } else if (item.type === "file") {
             let file_obj = new File(item.name, item.contents, true);
             dir_obj.addFile(file_obj);
@@ -113,83 +116,8 @@ const shortcuts = {
     'spotify': "https://open.spotify.com"
 }
 
-// var about = new Folder("about"); root.addFolder(about);
-//     about.addFile(new File("bio", "Hi, my name is Arthur Bright! I'm a third year Computer Science Student at University of Waterloo.<br>" + 
-//     "I love making music and singing in the shower. I'm also into anything math (especially competitions :D)."));
-//     about.addFile(new File("contacts", 
-//         "Email: <a href=mailto:artb1234567@gmail.com target=_blank>artb1234567@gmail.com</a><br>" + 
-//         "LinkedIn: <a href=https://www.linkedin.com/in/a2bright/ target=_blank>https://www.linkedin.com/in/a2bright</a><br>" + 
-//         "Github: <a href=https://github.com/arthurbright target=_blank>https://github.com/arthurbright</a><br>" + 
-//         "Instagram: <a href=https://www.instagram.com/artb_64 target=_blank>@artb_64</a><br>" + 
-//         "Phone: 519-465-7304"));
-//     about.addFile(new File("education", 
-//         "University of Waterloo (2021-2026)<br>- Candidate for Bachelor of Computer Science<br>- 99.3 Faculty Average, 98 Overall Average; Advanced level math/CS courses<br>" + 
-//         "- Putnam Top 200<br>- UW Small C champion"));
-//     about.addFile(new File("skills", 
-//         "Languages: C++, Python, Java, C#, JS/TS, HTML/CSS<br>" + 
-//         "Technologies: Git, Node.js, .NET, HTTP, SQL, VS, Tensorflow"));
-//     var hobbies = new Folder("hobbies"); about.addFolder(hobbies);
-//         hobbies.addFile(new File("music", "I've often said that if I wasn't into tech, then music would be my top career choice.<br><br>" + 
-//             "In past years, I've been really getting into music theory and mixing. I've uploaded a bunch of covers on my " + 
-//             "primary instagram <a href=https://www.instagram.com/artb_64 target=_blank>@artb_64</a>, and also hundreds of piano covers where I " + 
-//             "play by ear on my second account <a href=https://www.instagram.com/c_major._/ target=_blank>@c_major._</a>.<br><br>" + 
-//             "I primarily play piano; I completed RCM 10, but I mainly play pop songs these days. I also played a variety of woodwind instruments in middle school."));
-//         hobbies.addFile(new File("sports", "I play basketball, ultimate frisbee, and I swim. I've also started bouldering recently, and I try to go every week. Hit me up if you wanna send some sends :)"));
-//         hobbies.addFile(new File("math", "I was a huge math nerd in high school (and still am :D). I particularly enjoyed writing math contests, " + 
-//             "and often ranked in Canada's top 30. I am a two-time CMO qualifier and recently achieved top 200 in the Putnam.<br><br>" + 
-//             "I enjoy any logical problems/puzzles; shoot me with your best shot >:)"));
-// var projects = new Folder("projects"); root.addFolder(projects);
-//     projects.addFile(new File("multipiano", "A multiplayer piano! Built with Node.js + Socket.<br>" +
-//         "Try it out: <a href=https://multipiano.glitch.me/ target=_blank>https://multipiano.glitch.me/<\a> (might take a sec to load)<br>" + 
-//         "Source: <a href=https://github.com/arthurbright/Multipiano target=_blank>https://github.com/arthurbright/Multipiano<\a>"));
-//     projects.addFile(new File("spectral", "Neural network that identifies musical chords from audio samples using spectrogram (WIP). Built with Python + Tensorflow/Keras.<br>" +
-//         "Source: <a href=https://github.com/arthurbright/Spectral target=_blank>https://github.com/arthurbright/Spectral<\a>"));
-//     projects.addFile(new File("hotspot", "Crowd-sourced web app that tracks COVID-19 spread on a heatmap. Made with Node.js + React + MongoDB + Google Maps. Winner at Garuda Hacks 2020<br>" + 
-//         "Source: <a href=https://github.com/thesilican/garudahacks-2020 target=_blank>https://github.com/thesilican/garudahacks-2020<\a>"));
-//     projects.addFile(new File("sbotify", "Music downloader, like Spotify, but for free! Built with Node.js.<br>" + 
-//         "Source: <a href=https://github.com/arthurbright/Soundtrack-downloader target=_blank>https://github.com/arthurbright/Soundtrack-downloader<\a>"));
-//     projects.addFile(new File("manhunt", "A web app for friends to play manhunt! Run around and hide on campus. Built with Node.js + Socket<br>" + 
-//         "Try it out: <a href=https://manhunt.glitch.me/ target=_blank>https://manhunt.glitch.me/<\a> (might take a sec to load)<br>" + 
-//         "Source: <a href=https://github.com/arthurbright/Manhunt target=_blank>https://github.com/arthurbright/Manhunt<\a>"));
-//     projects.addFile(new File("my-website", "This website! Source: <a href=https://github.com/arthurbright/arthurbright.github.io target=_blank>https://github.com/arthurbright/arthurbright.github.io<\a>"));
-//     projects.addFile(new File("remind", "A discord bot for scheduling and recieving reminders.<br>" + 
-//         "Source: <a href=https://github.com/arthurbright/Re-mind target=_blank>https://github.com/arthurbright/Re-mind<\a>"));
-//     projects.addFile(new File("graph.io", "A graph visualizer! Draw a graph and run some common graph algorithms on it. Built with Unity.<br>" + 
-//         "Try it out: <a href=https://simmer.io/@afur/graph-io target=_blank>https://simmer.io/@afur/graph-io<\a> (might take a sec to load)<br>" + 
-//         "Source: <a href=https://github.com/arthurbright/Graph.io target=_blank>https://github.com/arthurbright/Graph.io<\a>"));
-//     projects.addFile(new File("portal2d", "A 2D version of the popular game Portal. Comes with 15 challenging levels. Built with Unity.<br>" + 
-//         "Game files: <a href=https://github.com/arthurbright/Portal2D target=_blank>https://github.com/arthurbright/Portal2D<\a>"));
-// var experience = new Folder("experience"); root.addFolder(experience);
-//     experience.addFile(new File("2024-janestreet", 
-//         "Jane Street: Software Engineer || May 2024 - Aug 2024<br>" + 
-//         "- Find out soon!"));
-//     experience.addFile(new File("2023-bloomberg", 
-//         "Bloomberg LP: Software Engineer || Aug 2023 - Dec 2023<br>" +
-//         "Team: Entity Classification and Relationships<br>"  + 
-//         "- Researched semantic graph storage and pathfinding performance<br>" + 
-//         "- Developed service to cache and retrive ontology graph paths, greatly improving response time <br>" + 
-//         "- Developed pipeline to automatically recompute caches upon graph changes"));
-//     experience.addFile(new File("2023-questrade", 
-//         "Questrade: Softare Engineer || Jan 2023 - Apr 2023<br>" + 
-//         "- Developed new API endpoints for a market data microservice using Nest.js, allowing users to make batch requests of security data<br>" + 
-//         "- Implemented data preprocessing and safety checks to prevent microservice errors/outages<br>" + 
-//         "- Identified and fixed 30+ production bugs in trading platform, including memory leaks"));
-//     experience.addFile(new File("2022-imagine", 
-//         "Imagine Communications: Backend Developer || May 2022 - Aug 2022<br>" + 
-//         "- Developed a robust HTTP client in .NET for communicating with Amazon S3 cloud storage<br>" + 
-//         "- Optimized PostgreSQL connections by strategically pruning idle connections, improving performance tenfold"));
-// root.addFile(new File("resume", ""));
-
-// var secret = new Folder("secret"); root.addFolder(secret);
-// for(let i = 2; i < 2; i ++){
-//     let s = new Folder("secret" + i.toString());
-//     secret.addFolder(s);
-//     secret = s;
-// }
-// secret.addFile(new File("top-secret.txt", "THERE ARE INFINITELY MANY TWIN PRIMES<br>Type 'piano' to play a piano.<br>Also, type 'cats' to see a random picture of my cats, Lulu and Percy :3"));
-
-
-
+// TODO: add a section for math problems!
+// TODO: fix bug where links in the projects section show up with <\a> at teh end
 
 function append(str){
     fixed.innerHTML = fixed.innerHTML + str;
@@ -377,14 +305,12 @@ function autofill(){
     }
 
     let dstr = lastWord;
-    if(dstr.startsWith("/") || dstr.startsWith("\\")){
-        dstr = "~" + dstr;
+    if(dstr.startsWith(home_folder)){
+        //do nothing
     }
     else{
         dstr = curFolder.path + "/" + dstr;
     }
-    //take out the "~" prefix
-    dstr = dstr.substr(1);
 
     let s = Math.max(dstr.lastIndexOf("/"), dstr.lastIndexOf("\\"));
     let pre = dstr.substring(0, s + 1);

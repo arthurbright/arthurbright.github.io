@@ -24,6 +24,7 @@ def get_directory_structure(directory):
                 # text file; read contents
                 with open(item.absolute(), "r", encoding="utf-8") as f:
                     contents = f.read()
+                contents = contents.replace("\n", "<br>")
 
                 structure["children"].append({
                     "name": item.name[:-4],

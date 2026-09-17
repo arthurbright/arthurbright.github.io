@@ -1,0 +1,4 @@
+Questrade: Softare Engineer Intern || Jan 2023 - Apr 2023
+- Developed new API endpoints for a market data microservice using Nest.js, allowing users to make batch requests of security data
+- Implemented data preprocessing and safety checks to prevent microservice errors/outages
+- Identified and fixed 30+ production bugs in trading platform, including memory leaks
