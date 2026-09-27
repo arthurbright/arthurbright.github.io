@@ -1,0 +1,3 @@
+My CS488 (graphics) final project! I implemented photorealistic raytracing on simple geometry, 
+including reflection, refraction, Fresnel, bump mapping, DoF blur, anti-aliasing, Beer's law, and animation.
+Use command 'raytrace' to see a sample!

@@ -26,6 +26,11 @@
                     "type": "directory",
                     "children": [
                         {
+                            "name": "gaming",
+                            "type": "file",
+                            "contents": "MCSR PB: 13:05<br>League of Legends peak rank: Plat IV<br>Geometry dash: All main demons beaton<br>SMO Trickjump: High elite"
+                        },
+                        {
                             "name": "math",
                             "type": "file",
                             "contents": "I was a huge math nerd in school (and still am :D). I particularly enjoyed writing math contests,<br>and often ranked in Canada's top 30. I am a two-time CMO qualifier and also achieved top 120 in the Putnam.<br><br>I enjoy any logical problems/puzzles; shoot me with your best shot >:)"
@@ -87,47 +92,52 @@
                 {
                     "name": "graph.io",
                     "type": "file",
-                    "contents": "A graph visualizer! Draw a graph and run some common graph algorithms on it. Built with Unity.<br>Try it out: <a href=https://simmer.io/@afur/graph-io target=_blank>https://simmer.io/@afur/graph-io (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Graph.io target=_blank>https://github.com/arthurbright/Graph.io"
+                    "contents": "A graph visualizer! Draw a graph and run some common graph algorithms on it. Built with Unity.<br>Try it out: <a href=https://simmer.io/@afur/graph-io target=_blank>https://simmer.io/@afur/graph-io<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Graph.io target=_blank>https://github.com/arthurbright/Graph.io</a>"
                 },
                 {
                     "name": "hotspot",
                     "type": "file",
-                    "contents": "Crowd-sourced web app that tracks COVID-19 spread on a heatmap. Made with Node.js + React + MongoDB + Google Maps. Winner at Garuda Hacks 2020<br>Source: <a href=https://github.com/thesilican/garudahacks-2020 target=_blank>https://github.com/thesilican/garudahacks-2020<\\a>"
+                    "contents": "Crowd-sourced web app that tracks COVID-19 spread on a heatmap. Made with Node.js + React + MongoDB + Google Maps. Winner at Garuda Hacks 2020<br>Source: <a href=https://github.com/thesilican/garudahacks-2020 target=_blank>\"https://github.com/thesilican/garudahacks-2020\"</a><br>"
                 },
                 {
                     "name": "manhunt",
                     "type": "file",
-                    "contents": "A web app for friends to play manhunt! Run around and hide on campus. Built with Node.js + Socket<br>Try it out: <a href=https://manhunt.glitch.me/ target=_blank>https://manhunt.glitch.me/<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Manhunt target=_blank>https://github.com/arthurbright/Manhunt<\\a>"
+                    "contents": "A web app for friends to play manhunt! Run around and hide on campus. Built with Node.js + Socket<br>Try it out: <a href=https://manhunt.glitch.me/ target=_blank>https://manhunt.glitch.me/<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Manhunt target=_blank>https://github.com/arthurbright/Manhunt</a>"
                 },
                 {
                     "name": "multipiano",
                     "type": "file",
-                    "contents": "A multiplayer piano! Built with Node.js + Socket.<br>Try it out: <a href=https://multipiano.glitch.me/ target=_blank>https://multipiano.glitch.me/<\\a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Multipiano target=_blank>https://github.com/arthurbright/Multipiano<\\a>"
+                    "contents": "A multiplayer piano! Built with Node.js + Socket.<br>Try it out: <a href=https://multipiano.glitch.me/ target=_blank>https://multipiano.glitch.me/</a> (might take a sec to load)<br>Source: <a href=https://github.com/arthurbright/Multipiano target=_blank>https://github.com/arthurbright/Multipiano</a>"
                 },
                 {
                     "name": "my-website",
                     "type": "file",
-                    "contents": "This website! Source: <a href=https://github.com/arthurbright/arthurbright.github.io target=_blank>https://github.com/arthurbright/arthurbright.github.io<\\a><br><br>If you would like to use this site as a template for your own personal site, feel free!"
+                    "contents": "This website! Source: <a href=https://github.com/arthurbright/arthurbright.github.io target=_blank>https://github.com/arthurbright/arthurbright.github.io</a><br><br>If you would like to use this site as a template for your own personal site, feel free!"
                 },
                 {
                     "name": "portal2d",
-                    "type": "served_file",
-                    "full_path": "src\\~\\projects\\portal2d"
+                    "type": "file",
+                    "contents": "A 2D version of the popular game Portal. Comes with 15 challenging levels. Built with Unity.<br>Game files: <a href=https://github.com/arthurbright/Portal2D target=_blank>https://github.com/arthurbright/Portal2D</a>"
+                },
+                {
+                    "name": "raytracer",
+                    "type": "file",
+                    "contents": "My CS488 (graphics) final project! I implemented photorealistic raytracing on simple geometry, <br>including reflection, refraction, Fresnel, bump mapping, DoF blur, anti-aliasing, Beer's law, and animation.<br>Use command 'raytrace' to see a sample!"
                 },
                 {
                     "name": "remind",
                     "type": "file",
-                    "contents": "A discord bot for scheduling and recieving reminders.<br>Source: <a href=https://github.com/arthurbright/Re-mind target=_blank>https://github.com/arthurbright/Re-mind<\\a>"
+                    "contents": "A discord bot for scheduling and recieving reminders.<br>Source: <a href=https://github.com/arthurbright/Re-mind target=_blank>https://github.com/arthurbright/Re-mind</a>"
                 },
                 {
                     "name": "sbotify",
                     "type": "file",
-                    "contents": "Music downloader, like Spotify, but for free! Built with Node.js.<br>Source: <a href=https://github.com/arthurbright/Soundtrack-downloader target=_blank>https://github.com/arthurbright/Soundtrack-downloader<\\a>"
+                    "contents": "Music downloader, like Spotify, but for free! Built with Node.js.<br>Source: <a href=https://github.com/arthurbright/Soundtrack-downloader target=_blank>https://github.com/arthurbright/Soundtrack-downloader</a>"
                 },
                 {
                     "name": "spectral",
                     "type": "file",
-                    "contents": "Neural network that identifies musical chords from audio samples using spectral analysis (WIP). Built with Python + Tensorflow/Keras.<br>Source: <a href=https://github.com/arthurbright/Spectral target=_blank>https://github.com/arthurbright/Spectral<\\a>"
+                    "contents": "Neural network that identifies musical chords from audio samples using spectral analysis (WIP). Built with Python + Tensorflow/Keras.<br>Source: <a href=https://github.com/arthurbright/Spectral target=_blank>https://github.com/arthurbright/Spectral</a>"
                 }
             ]
         },

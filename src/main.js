@@ -107,8 +107,9 @@ var curFolder = root;
 
 
 const shortcuts = {
+    'raytrace': "raytrace.png",
     'piano': "piano/room.html",
-    'resume': "Arthur-Bright-Resume.pdf", // TODO: change this
+    'resume': "src/~/resume.pdf", // TODO: change this
     'github': "https://github.com/arthurbright",
     'linkedin': "https://www.linkedin.com/in/a2bright/",
     'ig': "https://www.instagram.com/artb_64/",
@@ -117,7 +118,6 @@ const shortcuts = {
 }
 
 // TODO: add a section for math problems!
-// TODO: fix bug where links in the projects section show up with <\a> at teh end
 
 function append(str){
     fixed.innerHTML = fixed.innerHTML + str;
